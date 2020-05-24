@@ -8,10 +8,12 @@
     <script src="js/jquery_3.5.1.js"></script>
     <script type="text/javascript"> 
         jQuery(function($){
+            var d = new Date();
+            var m = d.getMonth() + 1;
             $('.month').hide();
-            $('.month:first').show();
-            $('.months a:first').addClass('active');
-            var current = 1;
+            $('#month'+m).show();
+            $('.months a#linkMonth'+m).addClass('active');
+            var current = m;
             $('.months a').click(function(){
                 var month = $(this).attr('id').replace('linkMonth','');
                 if(month != current){
